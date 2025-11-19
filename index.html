@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aylin Baykal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Icons (optional) -->
+  <link rel="icon" href="content/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="content/icons/apple-touch-icon.png">
+  <link rel="manifest" href="content/icons/site.webmanifest">
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7STE7LT4MW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7STE7LT4MW');
+  </script>
+</head>
+<body>
+
+  <!-- Fullscreen typewriter intro -->
+  <div id="intro">
+    <div class="intro-inner">
+      <span id="intro-typewriter" class="intro-text"></span>
+    </div>
+  </div>
+
+  <!-- Main Website Layout -->
+  <div id="site" class="site">
+
+    <!-- Four corner links -->
+    <button class="corner corner-top-left corner-link" data-side="right" data-section="about">
+      About
+    </button>
+
+    <button class="corner corner-bottom-left corner-link" data-side="right" data-section="photography">
+      Photography
+    </button>
+
+    <button class="corner corner-top-right corner-link" data-side="left" data-section="research">
+      Research
+    </button>
+
+    <button class="corner corner-bottom-right corner-link" data-side="left" data-section="contact">
+      Contact
+    </button>
+
+    <!-- Center area -->
+    <main class="main-layout">
+
+      <!-- Left panel -->
+      <aside class="section-panel panel-left" id="panel-left">
+        <button class="panel-close" type="button" aria-label="Close panel">╳</button>
+        <div class="panel-content" id="panel-left-content"></div>
+      </aside>
+
+      <!-- Center photo -->
+      <div class="photo-wrapper">
+        <img id="main-photo" class="center-photo" alt="Photography by Aylin Baykal">
+      </div>
+
+      <!-- Right panel -->
+      <aside class="section-panel panel-right" id="panel-right">
+        <button class="panel-close" type="button" aria-label="Close panel">╳</button>
+        <div class="panel-content" id="panel-right-content"></div>
+      </aside>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/t-writer.js"></script>
+  <script src="assets/js/main.js?v=1"></script>
+
+</body>
+</html>
