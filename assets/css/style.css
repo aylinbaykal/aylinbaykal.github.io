@@ -113,7 +113,6 @@ body.intro-done .site {
   opacity: 0.6;
 }
 
-/* Reduced edge distance from 40px to 20px */
 .corner-top-left { top: 20px; left: 20px; }
 .corner-bottom-left { bottom: 20px; left: 20px; }
 .corner-top-right { top: 20px; right: 20px; }
@@ -147,15 +146,16 @@ body.intro-done .site {
   transform: translateX(0);
 }
 
-/* Close button for panels */
 .panel-close {
   align-self: flex-end;
   margin-left: auto;
   font-family: Arial, Helvetica, sans-serif !important;
-  font-size: 30px;
+  font-size: 20px;
   border: none;
   background: transparent;
   cursor: pointer;
+  color: #333333; 
+  -webkit-appearance: none;
 }
 
 .panel-content {
@@ -304,7 +304,7 @@ body.intro-done .site {
 
 @media (max-width: 768px) {
   .main-layout {
-    padding: 60px 20px;
+    padding: 40px 20px;
   }
 
   .corner {
@@ -318,19 +318,17 @@ body.intro-done .site {
     max-height: 55vh;
   }
 
-  /* Reset the massive desktop paddings for the slide-in panels */
   .panel-content h2,
   .panel-content.research-mode h3,
   .panel-content.about-mode p,
   .panel-content.photography-mode p,
   .panel-content.research-mode p {
-    padding: 0 20px; 
+    padding: 0; 
   }
 
-  /* Adjust list spacing for mobile */
   .panel-content.about-mode ul,
   .panel-content.research-mode ul {
-    padding: 0 20px 0 40px; 
+    padding: 0 0 0 20px; 
   }
 
   .research-list {
