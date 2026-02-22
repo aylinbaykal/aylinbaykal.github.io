@@ -2,20 +2,6 @@
    FONT SETUP — CARGO ARIZONA PLUS (VARIABLE)
 ---------------------------------------------------- */
 
-@font-face {
-  font-family: "AylinCargo";
-  src: url("/assets/fonts/CargoArizonaPlusVariable.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AylinCargo";
-  src: url("/assets/fonts/CargoArizonaPlusItalicVariable.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: italic;
-}
-
 *,
 *::before,
 *::after {
@@ -29,8 +15,8 @@ html, body {
 }
 
 body {
-  font-family: "AylinCargo", serif !important;
-  background: #ffffff;
+  font-family: "Cormorant Garamond", serif !important;
+  background: rgb(247, 247, 245);
   color: #000000;
 }
 
@@ -41,7 +27,7 @@ body {
 #intro {
   position: fixed;
   inset: 0;
-  background: #ffffff;
+  background: rgb(247, 247, 245);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,9 +96,9 @@ body.intro-done .site {
 
 .corner {
   position: fixed;
-  font-family: "AylinCargo", serif !important;
-  padding: 30px 30px;
-  font-size: 14px;
+  font-family: 'Cormorant Garamond', serif !important;
+  padding: 0px;
+  font-size: 16px;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   background: transparent;
@@ -125,10 +111,11 @@ body.intro-done .site {
   opacity: 0.6;
 }
 
-.corner-top-left { top: 40px; left: 40px; }
-.corner-bottom-left { bottom: 40px; left: 40px; }
-.corner-top-right { top: 40px; right: 40px; }
-.corner-bottom-right { bottom: 40px; right: 40px; }
+/* Reduced edge distance from 40px to 20px */
+.corner-top-left { top: 20px; left: 20px; }
+.corner-bottom-left { bottom: 20px; left: 20px; }
+.corner-top-right { top: 20px; right: 20px; }
+.corner-bottom-right { bottom: 20px; right: 20px; }
 
 /* ----------------------------------------------------
    SIDE PANELS
@@ -148,6 +135,8 @@ body.intro-done .site {
   transform: translateX(100%);
   transition: transform 0.4s ease;
   z-index: 30;
+  overflow-y: auto; 
+  -webkit-overflow-scrolling: touch; 
 }
 
 .panel-left { transform: translateX(-100%); }
@@ -175,7 +164,7 @@ body.intro-done .site {
 }
 
 .panel-content h2 {
-  font-family: "AylinCargo", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 0.22em;
@@ -230,7 +219,7 @@ body.intro-done .site {
 }
 
 .research-list li {
-  font-family: "AylinCargo", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 16px;
   line-height: 1.65;
   margin-bottom: 0.6em;
@@ -254,45 +243,55 @@ body.intro-done .site {
 }
 
 /* ----------------------------------------------------
-   CONTACT GRID LAYOUT
+   CONTACT LAYOUT
 ---------------------------------------------------- */
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 400px;
-  row-gap: 20px;
-  padding: 50px 0 400px 400px;
+.contact-list {
+  padding: 0 160px; 
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px; 
 }
 
-.contact-column {
-  text-align: left;
+.contact-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-.contact-column h3 {
-  font-family: "AylinCargo", serif;
+.contact-row h3 {
+  font-family: "Cormorant Garamond", serif !important;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #333;
-  margin-bottom: 1em;
+  color: #333333;
+  margin: 0;
+  width: 280px;
+  flex-shrink: 0;
 }
 
-.contact-column p {
-  margin: 0 0 0.8em 0;
-  font-size: 15px;
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.contact-details p {
+  margin: 0;
+  font-size: 16px;
   line-height: 1.6;
 }
 
-.contact-column .text-link {
+.contact-details .text-link {
   color: inherit;
   text-decoration: none;
   font-style: normal;
   transition: font-style 0.2s ease, opacity 0.2s ease;
 }
 
-.contact-column .text-link:hover {
+.contact-details .text-link:hover {
   font-style: italic;
   opacity: 0.7;
 }
@@ -302,14 +301,13 @@ body.intro-done .site {
 ---------------------------------------------------- */
 
 @media (max-width: 768px) {
-
   .main-layout {
     padding: 60px 20px;
   }
 
   .corner {
-    font-size: 11px;
-    padding: 12px 16px;
+    font-size: 15px;
+    padding: 12px;
     letter-spacing: 0.08em;
   }
 
@@ -318,13 +316,44 @@ body.intro-done .site {
     max-height: 55vh;
   }
 
+  /* Reset the massive desktop paddings for the slide-in panels */
+  .panel-content h2,
+  .panel-content.research-mode h3,
+  .panel-content.about-mode p,
+  .panel-content.photography-mode p,
+  .panel-content.research-mode p {
+    padding: 0 20px; 
+  }
+
+  /* Adjust list spacing for mobile */
+  .panel-content.about-mode ul,
+  .panel-content.research-mode ul {
+    padding: 0 20px 0 40px; 
+  }
+
+  .research-list {
+    padding-left: 0; 
+  }
+
   .panel-content {
     font-size: 13px;
     line-height: 1.55;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-list {
+    padding: 0 20px; 
+    display: flex;
+    flex-direction: column;
     gap: 40px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-row h3 {
+    width: auto;
   }
 }

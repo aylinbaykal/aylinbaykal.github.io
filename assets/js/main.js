@@ -76,23 +76,25 @@ document.addEventListener("DOMContentLoaded", function () {
     contact: `
       <h2>Contact</h2>
 
-      <div class="contact-grid">
+      <div class="contact-list">
 
-        <div class="contact-column">
+        <div class="contact-row">
           <h3>Get In Touch</h3>
-          <p>
-            <a class="text-link" href="mailto:aylin.baykal@warwick.ac.uk">aylin.baykal@warwick.ac.uk</a>
-          </p>
+          <div class="contact-details">
+            <p><a class="text-link" href="mailto:aylin.baykal@warwick.ac.uk">aylin.baykal@warwick.ac.uk</a></p>
+          </div>
         </div>
 
-        <div class="contact-column">
+        <div class="contact-row">
           <h3>On Other Platforms</h3>
-          <p><a class="text-link" href="https://www.linkedin.com/in/aylinbaykal" target="_blank">Linkedin</a></p>
-          <p><a class="text-link" href="https://www.x.com/aylinbaykal" target="_blank">Twitter</a></p>
-          <p><a class="text-link" href="https://www.behance.net/aylinbayk" target="_blank">Behance</a></p>
-          <p><a class="text-link" href="https://www.goodreads.com/aylinbaykal" target="_blank">Goodreads</a></p>
-          <p><a class="text-link" href="https://www.letterboxd.com/Aylinbayk" target="_blank">Letterboxd</a></p>
-          <p><a class="text-link" href="https://open.spotify.com/user/abaykalable" target="_blank">Spotify</a></p>
+          <div class="contact-details">
+            <p><a class="text-link" href="https://www.linkedin.com/in/aylinbaykal" target="_blank">Linkedin</a></p>
+            <p><a class="text-link" href="https://www.x.com/aylinbaykal" target="_blank">Twitter</a></p>
+            <p><a class="text-link" href="https://www.behance.net/aylinbayk" target="_blank">Behance</a></p>
+            <p><a class="text-link" href="https://www.goodreads.com/aylinbaykal" target="_blank">Goodreads</a></p>
+            <p><a class="text-link" href="https://www.letterboxd.com/Aylinbayk" target="_blank">Letterboxd</a></p>
+            <p><a class="text-link" href="https://open.spotify.com/user/abaykalable" target="_blank">Spotify</a></p>
+          </div>
         </div>
 
       </div>
