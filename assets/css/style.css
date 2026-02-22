@@ -105,6 +105,8 @@ body.intro-done .site {
   border: none;
   cursor: pointer;
   z-index: 20;
+  color: #333333; 
+  -webkit-appearance: none;
 }
 
 .corner:hover {
