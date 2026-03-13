@@ -146,42 +146,60 @@ body.intro-done .site {
   transform: translateX(0);
 }
 
-.panel-close {
-  align-self: flex-end;
-  margin-left: auto;
-  font-family: Arial, Helvetica, sans-serif !important;
-  font-size: 20px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  color: #333333; 
-  -webkit-appearance: none;
-}
-
 .panel-content {
-  margin-top: 24px;
-  font-size: 16px;       /* ~12pt */
-  line-height: 1.65;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;           
+  font-size: 16px;       /* ~12pt */       
+  line-height: 1.35;
   letter-spacing: 0.02em;
 }
 
 .panel-content h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 0.22em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 0px;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 16px;
+  font-weight: 400;      
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 1.8em;
+  color: #333333;        
+  z-index: 40;
+}
+
+.panel-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0px;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 16px;
+  font-weight: 400;      
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
   color: #333333;
-  padding: 0 160px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  z-index: 40;
+}
+
+.panel-close:hover {
+  opacity: 0.6;
 }
 
 .panel-content p {
   text-align: justify;
   font-size: 16px;
-  line-height: 1.75;
-  margin-bottom: 1.6em;
+  line-height: 1.35;
+  margin-bottom: 1.2em;
   color: #2a2a2a;
   padding: 0;
 }
@@ -189,43 +207,47 @@ body.intro-done .site {
 .panel-content.about-mode p,
 .panel-content.photography-mode p,
 .panel-content.research-mode p {
-    padding: 0 160px;
+    padding: 0 300px;
 }
 
 .panel-content.research-mode h3 {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 16px;
-  padding: 0 160px;
+  padding: 0 300px;
 }
 
 /* -----------------------------------------
    RESEARCH LIST STYLING
 ------------------------------------------ */
 
-.panel-content.about-mode ul,
-.panel-content.research-mode ul {
-  padding: 0 180px;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
-}
-
 .research-list {
   list-style: none;
-  padding-left: 180px;
+  padding-left: 20px;
+}
+
+.panel-content.about-mode ul,
+.panel-content.research-mode ul {
+  padding: 0 300px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  list-style: none;
+}
+
+.research-list li {
+  position: relative;
+  padding-left: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  line-height: 1.35;
+  margin-bottom: 0.6em;
+  color: #2a2a2a;
 }
 
 .research-list li::before {
   content: "– ";
-  margin-left: -20px;
-}
-
-.research-list li {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
-  line-height: 1.65;
-  margin-bottom: 0.6em;
-  color: #2a2a2a;
+  position: absolute;
+  left: 0;
 }
 
 /* ----------------------------------------------------
@@ -249,8 +271,9 @@ body.intro-done .site {
 ---------------------------------------------------- */
 
 .contact-list {
-  padding: 0 160px; 
-  margin-top: 64px;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 50px; 
@@ -283,7 +306,7 @@ body.intro-done .site {
 .contact-details p {
   margin: 0;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 0.75;
 }
 
 .contact-details .text-link {
@@ -296,6 +319,50 @@ body.intro-done .site {
 .contact-details .text-link:hover {
   font-style: italic;
   opacity: 0.7;
+}
+
+/* ----------------------------------------------------
+   PHOTOGRAPHY LAYOUT
+---------------------------------------------------- */
+
+.photography-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 160px;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.photo-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.collection-img {
+  height: 450px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain; 
+  cursor: pointer;
+}
+
+.collection-title {
+  margin-top: 24px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #333333;
+  text-align: center;
+}
+
+.collection-subtitle {
+  font-style: italic;
 }
 
 /* ----------------------------------------------------
@@ -328,11 +395,7 @@ body.intro-done .site {
 
   .panel-content.about-mode ul,
   .panel-content.research-mode ul {
-    padding: 0 0 0 20px; 
-  }
-
-  .research-list {
-    padding-left: 0; 
+    padding: 0; 
   }
 
   .panel-content {
@@ -342,6 +405,7 @@ body.intro-done .site {
 
   .contact-list {
     padding: 0 20px; 
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -356,4 +420,25 @@ body.intro-done .site {
   .contact-row h3 {
     width: auto;
   }
+
+  .panel-content h2,
+  .panel-close {
+    font-size: 15px;
+    padding: 12px;
+    letter-spacing: 0.08em;
+  }
+  
+  .panel-content {
+    margin-top: 40px;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+
+  .collection-img {
+    height: 380px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain; 
+  } 
 }
