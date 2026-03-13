@@ -442,13 +442,13 @@ body.intro-done .site {
     object-fit: contain; 
   } 
 
-  .corner-top-left { top: 10px; left: 10px; }
-  .corner-bottom-left { bottom: 10px; left: 10px; }
-  .corner-top-right { top: 10px; right: 10px; }
-  .corner-bottom-right { bottom: 10px; right: 10px; }
+  .corner-top-left { top: 5px; left: 5px; }
+  .corner-bottom-left { bottom: 5px; left: 5px; }
+  .corner-top-right { top: 5px; right: 5px; }
+  .corner-bottom-right { bottom: 5px; right: 5px; }
 
-  .panel-content h2 { top: 10px; left: 10px; }
-  .panel-close { top: 10px; right: 10px; }
+  .panel-content h2 { top: 5px; left: 5px; }
+  .panel-close { top: 5px; right: 5px; }
 
   .photography-container { gap: 60px; }
 
