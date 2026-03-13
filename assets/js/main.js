@@ -204,15 +204,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function openPanel(side, sectionKey) {
       const html = contentMap[sectionKey] || "<p>Content coming soon.</p>";
 
-      // First: close both panels
       leftPanel.classList.remove("is-open");
       rightPanel.classList.remove("is-open");
 
-      // Clear old mode classes
       leftContent.classList.remove("about-mode", "photography-mode", "research-mode", "contact-mode");
       rightContent.classList.remove("about-mode", "photography-mode", "research-mode", "contact-mode");
 
-      // LEFT PANEL
       if (side === "left") {
           leftContent.innerHTML = html;
           leftPanel.classList.add("is-open");
@@ -223,7 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
           if (sectionKey === "contact") leftContent.classList.add("contact-mode");
       }
 
-      // RIGHT PANEL
       if (side === "right") {
           rightContent.innerHTML = html;
           rightPanel.classList.add("is-open");
@@ -247,7 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.addEventListener("click", closePanels);
   });
 
-  // ESC closes panels
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closePanels();
   });
@@ -262,9 +257,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const collection = photoCollections[collectionIndex];
       
       const nextImgIndex = (currentImgIndex + 1) % collection.images.length;
-      
       parentDiv.setAttribute("data-current-img", nextImgIndex);
       e.target.src = collection.folder + collection.images[nextImgIndex];
+
+      const futureImgIndex = (nextImgIndex + 1) % collection.images.length;
+      const imgPreload = new Image();
+      imgPreload.src = collection.folder + collection.images[futureImgIndex];
     }
   });
 

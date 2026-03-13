@@ -329,7 +329,7 @@ body.intro-done .site {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 160px;
+  gap: 100px;
   width: 100%;
   padding-bottom: 80px;
 }
@@ -351,9 +351,9 @@ body.intro-done .site {
 }
 
 .collection-title {
-  margin-top: 24px;
+  margin-top: 10px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.6;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -441,4 +441,15 @@ body.intro-done .site {
     max-width: 100%;
     object-fit: contain; 
   } 
+
+  .corner-top-left { top: 10px; left: 10px; }
+  .corner-bottom-left { bottom: 10px; left: 10px; }
+  .corner-top-right { top: 10px; right: 10px; }
+  .corner-bottom-right { bottom: 10px; right: 10px; }
+
+  .panel-content h2 { top: 10px; left: 10px; }
+  .panel-close { top: 10px; right: 10px; }
+
+  .photography-container { gap: 60px; }
+
 }
