@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Traces",
       subtitle: "MMXI - MMXXIV",
       folder: "content/photos/gallery/Traces/",
-      imageCount: 19
+      imageCount: 13
     }
   ];
 
