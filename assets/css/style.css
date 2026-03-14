@@ -459,4 +459,20 @@ body.intro-done .site {
     padding-bottom: 40px;
   }
 
+  .panel-content.contact-mode {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .panel-content.contact-mode .contact-list {
+    width: fit-content;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .panel-content.contact-mode .contact-row {
+    align-items: center;
+  }
+
 }
