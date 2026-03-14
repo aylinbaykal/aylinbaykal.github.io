@@ -380,15 +380,17 @@ body.intro-done .site {
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: #333333;
-  font-size: 24px;
+  color: #b3b3b3;
+  font-weight: 300;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
   cursor: pointer;
   z-index: 10;
   padding: 15px;
-  opacity: 0; /* Hidden by default! */
-  transition: opacity 0.3s ease;
+  opacity: 0; 
+  transition: opacity 0.3s ease, color 0.3s ease;
   -webkit-appearance: none;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9); 
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8); 
 }
 
 .img-wrapper:hover .nav-arrow {
@@ -396,7 +398,8 @@ body.intro-done .site {
 }
 
 .nav-arrow:hover {
-  opacity: 0.5 !important;
+  opacity: 1 !important;
+  color: #666666; 
 }
 
 .progress-dots {

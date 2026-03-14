@@ -96,9 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
     photographyHTML += `
       <div class="photo-collection" data-collection-index="${index}" data-current-img="0">
         <div class="img-wrapper">
-          <button class="nav-arrow left-arrow">❮</button>
+          <button class="nav-arrow left-arrow">⟨</button>
           <img class="collection-img" src="${collection.folder}${collection.images[0]}" alt="${collection.title}">
-          <button class="nav-arrow right-arrow">❯</button>
+          <button class="nav-arrow right-arrow">⟩</button>
         </div>
         ${dotsHTML} <div class="collection-title">
           ${collection.title}<br>
