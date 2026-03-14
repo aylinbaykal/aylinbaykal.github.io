@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Encounters III",
       subtitle: "MMXV - MMXXIV",
       folder: "content/photos/gallery/EncountersIII/",
-      imageCount: 19
+      imageCount: 20
     },
     {
       title: "Shadows",
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Flux",
       subtitle: "MMXIX - MMXXIV",
       folder: "content/photos/gallery/Flux/",
-      imageCount: 18
+      imageCount: 20
     },     
     {
       title: "Earthly",
@@ -49,25 +49,25 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Cubanacán",
       subtitle: "MMXIX",
       folder: "content/photos/gallery/Cubanacan/",
-      imageCount: 20
+      imageCount: 22
     },  
     {
       title: "Luminous",
       subtitle: "MMXV - MMXXIV",
       folder: "content/photos/gallery/Luminous/",
-      imageCount: 21
+      imageCount: 24
     }, 
     {
       title: "Encounters II",
       subtitle: "MMXI - MMXXIII",
       folder: "content/photos/gallery/EncountersII/",
-      imageCount: 16
+      imageCount: 18
     },
     {
       title: "Encounters I",
       subtitle: "MMXV - MMXXIV",
       folder: "content/photos/gallery/EncountersI/",
-      imageCount: 13
+      imageCount: 14
     },
     {
       title: "Traces",
