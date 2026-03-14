@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Born and raised in Istanbul, Aylin earned a BSc in Business Administration through a joint programme between Middle East Technical University (METU) in Ankara and Binghamton University (SUNY) in New York. She later completed an MSc in Development Administration at University College London (UCL). Before starting her PhD, she worked as a business and data analyst across sectors in New York and New Jersey, and later as a transport analyst in London.      
       </p>
       <p>
-        Beyond research, she enjoys <a class="text-link" href="https://www.goodreads.com/aylinbaykal">reading</a>, <a class="text-link" href="https://www.letterboxd.com/Aylinbayk">watching films</a>, <a class="text-link" href="https://www.strava.com/athletes/aylin_baykal">cycling</a>, and <a class="text-link" href="https://www.behance.net/aylinbayk">photography</a>. Aylin is a native Turkish speaker, fluent in English, and has advanced proficiency in German. She is currently based in Leamington Spa, UK, where she lives with her partner, <a class="text-link" href="https://www.ozaneakbas.com">Ozan E. Akbas</a>.
+        Beyond research, she enjoys <a class="text-link" href="https://www.goodreads.com/aylinbaykal">reading</a>, <a class="text-link" href="https://www.letterboxd.com/Aylinbayk">watching films</a>, <a class="text-link" href="https://www.strava.com/athletes/aylin_baykal">cycling</a>, and <a href="#" class="text-link internal-link" data-side="left" data-section="photography">photography</a>. Aylin is a native Turkish speaker, fluent in English, and has advanced proficiency in German. She is currently based in Leamington Spa, UK, where she lives with her partner, <a class="text-link" href="https://www.ozaneakbas.com">Ozan E. Akbas</a>.
       </p>      
     `,
     photography: photographyHTML,
@@ -263,6 +263,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const futureImgIndex = (nextImgIndex + 1) % collection.images.length;
       const imgPreload = new Image();
       imgPreload.src = collection.folder + collection.images[futureImgIndex];
+    }
+    if (e.target.classList.contains("internal-link")) {
+      e.preventDefault(); // Stops the page from jumping to the top
+      const side = e.target.getAttribute("data-side");
+      const section = e.target.getAttribute("data-section");
+      openPanel(side, section);
     }
   });
 
