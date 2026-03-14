@@ -450,6 +450,13 @@ body.intro-done .site {
   .panel-content h2 { top: 1px; left: 1px; }
   .panel-close { top: 1px; right: 1px; }
 
-  .photography-container { gap: 60px; }
+  .section-panel {
+    padding: 60px 15px;
+  }
+
+  .photography-container {
+    gap: 60px;
+    padding-bottom: 40px;
+  }
 
 }
