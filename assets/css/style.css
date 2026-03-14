@@ -534,6 +534,9 @@ body.intro-done .site {
   .panel-content.contact-mode .contact-row {
     align-items: center;
   }
+  .panel-content.contact-mode .contact-details {
+    align-items: center;
+  }
 
   .nav-arrow {
     display: none !important;
