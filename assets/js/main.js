@@ -86,10 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let photographyHTML = `<h2>Photography</h2><div class="photography-container">`;
   photoCollections.forEach((collection, index) => {
+    
+    let dotsHTML = `<div class="progress-dots">`;
+    for(let i = 0; i < collection.imageCount; i++) {
+      dotsHTML += `<span class="dot ${i === 0 ? 'active' : ''}"></span>`;
+    }
+    dotsHTML += `</div>`;
+
     photographyHTML += `
       <div class="photo-collection" data-collection-index="${index}" data-current-img="0">
-        <img class="collection-img" src="${collection.folder}${collection.images[0]}" alt="${collection.title}">
-        <div class="collection-title">
+        <div class="img-wrapper">
+          <button class="nav-arrow left-arrow">❮</button>
+          <img class="collection-img" src="${collection.folder}${collection.images[0]}" alt="${collection.title}">
+          <button class="nav-arrow right-arrow">❯</button>
+        </div>
+        ${dotsHTML} <div class="collection-title">
           ${collection.title}<br>
           <span class="collection-subtitle">${collection.subtitle}</span>
         </div>
@@ -179,8 +190,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="contact-row">
           <h3>On Other Platforms</h3>
           <div class="contact-details">
-            <p><a class="text-link" href="https://www.linkedin.com/in/aylinbaykal" target="_blank">Linkedin</a></p>
-            <p><a class="text-link" href="https://www.x.com/aylinbaykal" target="_blank">Twitter</a></p>
+            <p><a class="text-link" href="https://www.linkedin.com/in/aylinbaykal" target="_blank">LinkedIn</a></p>
+            <p><a class="text-link" href="https://www.x.com/aylinbaykal" target="_blank">X</a></p>
             <p><a class="text-link" href="https://www.goodreads.com/aylinbaykal" target="_blank">Goodreads</a></p>
             <p><a class="text-link" href="https://www.letterboxd.com/Aylinbayk" target="_blank">Letterboxd</a></p>
             <p><a class="text-link" href="https://open.spotify.com/user/abaykalable" target="_blank">Spotify</a></p>
@@ -247,29 +258,55 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape") closePanels();
   });
 
-  // ---------- CLICK TO SWAP PHOTOS ----------
+  // ---------- GLOBAL CLICK LISTENER (PHOTOS, ARROWS & INTERNAL LINKS) ----------
   document.addEventListener("click", function (e) {
-    if (e.target.classList.contains("collection-img")) {
+    
+    // 1. GO FORWARD: Clicked the image OR the right arrow
+    if (e.target.classList.contains("collection-img") || e.target.classList.contains("right-arrow")) {
       const parentDiv = e.target.closest(".photo-collection");
       const collectionIndex = parseInt(parentDiv.getAttribute("data-collection-index"));
       let currentImgIndex = parseInt(parentDiv.getAttribute("data-current-img"));
       
       const collection = photoCollections[collectionIndex];
-      
       const nextImgIndex = (currentImgIndex + 1) % collection.images.length;
+      
       parentDiv.setAttribute("data-current-img", nextImgIndex);
-      e.target.src = collection.folder + collection.images[nextImgIndex];
+      parentDiv.querySelector(".collection-img").src = collection.folder + collection.images[nextImgIndex];
+
+      const dots = parentDiv.querySelectorAll(".dot");
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[nextImgIndex].classList.add("active");
 
       const futureImgIndex = (nextImgIndex + 1) % collection.images.length;
       const imgPreload = new Image();
       imgPreload.src = collection.folder + collection.images[futureImgIndex];
     }
+
+    // 2. GO BACKWARD: Clicked the left arrow
+    if (e.target.classList.contains("left-arrow")) {
+      const parentDiv = e.target.closest(".photo-collection");
+      const collectionIndex = parseInt(parentDiv.getAttribute("data-collection-index"));
+      let currentImgIndex = parseInt(parentDiv.getAttribute("data-current-img"));
+      
+      const collection = photoCollections[collectionIndex];
+      const prevImgIndex = (currentImgIndex - 1 + collection.images.length) % collection.images.length;
+      
+      parentDiv.setAttribute("data-current-img", prevImgIndex);
+      parentDiv.querySelector(".collection-img").src = collection.folder + collection.images[prevImgIndex];
+
+      const dots = parentDiv.querySelectorAll(".dot");
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[prevImgIndex].classList.add("active");
+    }
+
+    // 3. INTERNAL LINKS
     if (e.target.classList.contains("internal-link")) {
-      e.preventDefault(); // Stops the page from jumping to the top
+      e.preventDefault(); 
       const side = e.target.getAttribute("data-side");
       const section = e.target.getAttribute("data-section");
       openPanel(side, section);
     }
+    
   });
 
 });
